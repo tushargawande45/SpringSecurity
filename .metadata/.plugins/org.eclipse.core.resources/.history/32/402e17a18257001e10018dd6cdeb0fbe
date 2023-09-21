@@ -1,0 +1,23 @@
+package com.learn.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.learn.models.User;
+
+@Service
+public class UserService {
+	
+	List<User> list = new ArrayList<>();
+
+	public UserService() {
+		list.add(new User("abc","abc","abc@gmail.com"));
+		list.add(new User("xyz","xyz","xyz@gmail.com"));
+	}
+	
+	
+	
+
+}
