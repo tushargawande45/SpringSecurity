@@ -23,13 +23,15 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter{
 		http
 				.csrf().disable()
 				.authorizeRequests()
+				.antMatchers("/signin").permitAll()
 				.antMatchers("/public/**").hasRole("NORMAL")
 				.antMatchers("/users/**").hasRole("ADMIN")
 				.anyRequest()
 				.authenticated()
 				.and()
 //				.httpBasic();  ---> This is for Basic Authorization
-				.formLogin(); //--> This is for Form Based Authorization
+				.formLogin()    //--> This is for Form Based Authorization
+				.loginPage("/signin");
 	}
 
 	@Override
