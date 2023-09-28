@@ -31,7 +31,9 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter{
 				.and()
 //				.httpBasic();  ---> This is for Basic Authorization
 				.formLogin()    //--> This is for Form Based Authorization
-				.loginPage("/signin");
+				.loginPage("/signin")
+				.loginProcessingUrl("/doLogin")
+				.defaultSuccessUrl("/users/");
 	}
 
 	@Override
